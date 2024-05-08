@@ -10,8 +10,9 @@ import SwiftData
 
 struct ContentView: View {
     
-    @Environment(\.modelContext) var modelContext
-    @Query() var videos: [Video]
+     @Environment(\.modelContext) var modelContext
+     @Query() var videos: [Video]
+    // @Environment(VideoViewModel.self) var viewModel
     
     var body: some View {
         NavigationStack {
