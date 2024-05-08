@@ -13,6 +13,7 @@ struct videos_swift_dataApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(VideoViewModel())
                 .environmentObject(VideoViewModel())
         }
         //.modelContainer(for: [Video.self, Metadata.self])

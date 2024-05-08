@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-class VideoViewModel: ObservableObject {
+class VideoViewModel: ObservableObject, Observable {
     
     let container = try! ModelContainer(for: Video.self, Metadata.self)
     
@@ -26,7 +26,7 @@ class VideoViewModel: ObservableObject {
     func getVideos() {
         let fetchDescriptor = FetchDescriptor<Video>()
         videos = try! modelContext.fetch(fetchDescriptor)
-        print("Videos: \(videos)")
+        videos.forEach { print($0.title) }
     }
     
     /**
@@ -48,8 +48,6 @@ class VideoViewModel: ObservableObject {
             modelContext.delete($0)
         }
         try? modelContext.save()
-        videos = []
-        getVideos()
     }
     
 }

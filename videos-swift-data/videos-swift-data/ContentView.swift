@@ -10,14 +10,14 @@ import SwiftData
 
 struct ContentView: View {
     
-     @Environment(\.modelContext) var modelContext
-     @Query() var videos: [Video]
-    // @Environment(VideoViewModel.self) var viewModel
+     //@Environment(\.modelContext) var modelContext
+     //@Query() var videos: [Video]
+     @Environment(VideoViewModel.self) var viewModel
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(videos) { video in
+                ForEach(viewModel.videos) { video in
                     NavigationLink(value: video) {
                         HStack {
                             Text(video.title)
@@ -38,7 +38,7 @@ struct ContentView: View {
                     Button(action: {
                         withAnimation(.snappy) {
                             let newVideo = Video(id: .init(), title: "How to play Carcassone", metadata: .init(isFavorite: true))
-                            modelContext.insert(newVideo)
+                            viewModel.insertVideo(newVideo)
                         }
                     }, label: {
                         Label("Add Item", systemImage: "plus")
@@ -47,10 +47,7 @@ struct ContentView: View {
                 ToolbarItem {
                     Button(action: {
                         withAnimation(.snappy) {
-                            videos.forEach() {
-                                modelContext.delete($0)
-                            }
-                            try? modelContext.save()
+                            viewModel.deleteAllVideos()
                         }
                     }, label: {
                         Label("Delete Item", systemImage: "trash")
