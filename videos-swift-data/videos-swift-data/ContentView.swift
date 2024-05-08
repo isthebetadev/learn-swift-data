@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext
+    @Query() var videos: [Video]
     
     var body: some View {
         VStack {

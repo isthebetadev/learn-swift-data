@@ -16,7 +16,7 @@ class Video {
     @Transient var numberOfLikes: Int { title.count }
     @Relationship(deleteRule: .cascade) var metadata: Metadata
     
-    init(id: UUID, title: String) {
+    init(id: UUID, title: String, metadata: Metadata) {
         self.id = id
         self.title = title
         self.metadata = metadata
