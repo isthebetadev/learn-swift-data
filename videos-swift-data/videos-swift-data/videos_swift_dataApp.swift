@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct videos_swift_dataApp: App {
@@ -13,5 +14,6 @@ struct videos_swift_dataApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [Video.self, Metadata.self])
     }
 }
