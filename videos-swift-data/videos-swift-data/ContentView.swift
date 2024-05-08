@@ -29,6 +29,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Próximos videos 📺")
+            .navigationDestination(for: Video.self, destination: { video in
+                UpdateView(video: video)
+            })
             .toolbar {
                 ToolbarItem {
                     Button(action: {
