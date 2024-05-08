@@ -12,6 +12,7 @@
 		45D973062BEA4178006027C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D973052BEA4178006027C0 /* Assets.xcassets */; };
 		45D973092BEA4178006027C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D973082BEA4178006027C0 /* Preview Assets.xcassets */; };
 		45D973112BEA41E1006027C0 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D973102BEA41E1006027C0 /* Video.swift */; };
+		45D973132BEB6A7B006027C0 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D973122BEB6A7B006027C0 /* Metadata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		45D973052BEA4178006027C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D973082BEA4178006027C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45D973102BEA41E1006027C0 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		45D973122BEB6A7B006027C0 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				45D973102BEA41E1006027C0 /* Video.swift */,
+				45D973122BEB6A7B006027C0 /* Metadata.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			files = (
 				45D973042BEA4176006027C0 /* ContentView.swift in Sources */,
 				45D973112BEA41E1006027C0 /* Video.swift in Sources */,
+				45D973132BEB6A7B006027C0 /* Metadata.swift in Sources */,
 				45D973022BEA4176006027C0 /* videos_swift_dataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
