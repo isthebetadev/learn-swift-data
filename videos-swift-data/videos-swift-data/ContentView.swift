@@ -14,16 +14,50 @@ struct ContentView: View {
     @Query() var videos: [Video]
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(videos) { video in
+                    NavigationLink(value: video) {
+                        HStack {
+                            Text(video.title)
+                            if video.metadata.isFavorite {
+                                Image(systemName: "star.fill")
+                                    .foregroundStyle(.yellow)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Próximos videos 📺")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        withAnimation(.snappy) {
+                            let newVideo = Video(id: .init(), title: "How to play Carcassone", metadata: .init(isFavorite: true))
+                            modelContext.insert(newVideo)
+                        }
+                    }, label: {
+                        Label("Add Item", systemImage: "plus")
+                    })
+                }
+                ToolbarItem {
+                    Button(action: {
+                        withAnimation(.snappy) {
+                            videos.forEach() {
+                                modelContext.delete($0)
+                            }
+                            try? modelContext.save()
+                        }
+                    }, label: {
+                        Label("Delete Item", systemImage: "trash")
+                    })
+                }
+            }
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
-}
+ #Preview {
+ ContentView()
+ }
+ 
