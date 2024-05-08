@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct UpdateView: View {
+    
+    @Bindable var video: Video
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Editar el próximo video en la lista", text: $video.title)
+            Toggle("Favorito", isOn: $video.metadata.isFavorite)
+        }
     }
 }
 
 #Preview {
-    UpdateView()
+    UpdateView(video: .init(id: .init(), title: "test video", metadata: .init(isFavorite: true)))
 }
